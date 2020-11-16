@@ -4,11 +4,11 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Action
-        uses: actions/checkout@v2
-      - name: Setup Node
-        uses: actions/setup-node@v1
-      - name: Install bats
-        run: npm install -g bats
-      - name: Bats version
-        run: bats -v
+      - name: Checkout to repo
+        uses: guganabu/github-action@main
+        id: checkout-repo
+        with:
+          who-to-greet: 'Gugan Abu'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.checkout-repo.outputs.time }}"
