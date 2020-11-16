@@ -7,10 +7,18 @@ inputs:
   app_token:
     required: true
     description: 'Access token to interact with appknox cli'
+  who-to-greet:  # id of input
+    description: 'Who to greet'
+    required: true
+    default: 'World'
  
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
   - ${{ inputs.app_path }}
   - ${{ inputs.app_token }}
+  - ${{ inputs.who-to-greet }}
