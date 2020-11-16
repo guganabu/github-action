@@ -1,0 +1,12 @@
+on: [push]
+
+jobs:
+  print-log:
+    runs-on: ubuntu-latest
+    name: A job to print log when pushing something
+    steps:
+    - name: Logging
+      id: print-log-step1
+      uses: guganabu/github-action@master
+      with:
+        title: 'gugan'
