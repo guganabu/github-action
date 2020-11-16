@@ -7,6 +7,6 @@ jobs:
     steps:
     - name: Logging
       id: print-log-step1
-      uses: guganabu/github-action@master
+      uses: guganabu/github-action@main
       with:
         title: 'gugan'
