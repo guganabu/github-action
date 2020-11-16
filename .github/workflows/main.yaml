@@ -1,7 +1,7 @@
-name: learn-github-actions
+name: Learning Github Action
 on: [push]
 jobs:
-  check-bats-version:
+  docker-github-action:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout to repo
@@ -9,6 +9,7 @@ jobs:
         id: checkout-repo
         with:
           who-to-greet: 'Gugan Abu'
+          app_path: '/var/www/html'
       # Use the output from the `hello` step
       - name: Get the output time
-        run: echo "The time was ${{ steps.checkout-repo.outputs.time }}"
+        run: echo "The time was ${{ steps.checkout-repo.outputs.time }} and path ${{ steps.checkout-repo.outputs.path }}"
