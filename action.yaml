@@ -1,0 +1,16 @@
+name: 'Upload Filer'
+description: 'Upload file using docker image'
+inputs:
+  app_path:
+    required: true
+    description: 'Path to access APK/IPA'
+  app_token:
+    required: true
+    description: 'Access token to interact with appknox cli'
+ 
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+  - ${{ inputs.app_path }}
+  - ${{ inputs.app_token }}
